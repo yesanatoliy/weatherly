@@ -1,21 +1,29 @@
 <template>
   <div class="app">
     <HomePage />
+    <p></p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import HomePage from './pages/HomePage.vue'
-import { useLocationStore } from "@/stores/LocationStore"
-const locationStore = useLocationStore()
+import { useLocationStore } from "@/stores/LocationStore.js"
+
+
 export default defineComponent({
   components: {
     HomePage
   },
-  // mounted: () => {
-  //   // navigator.geolocation.getCurrentPosition
-  // }
+  setup(){
+    const locationStore = useLocationStore()
+
+    onMounted(() => {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        await locationStore.getCurrentWeather(position.coords)
+      })
+    })
+  }
 });
 </script>
 
