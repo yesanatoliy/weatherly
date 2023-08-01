@@ -1,16 +1,24 @@
 <template>
-    <div>
-
+    <div v-if="locationStore.currentWeather">
+        <p>{{ locationStore.currentWeather }}</p>
+    </div>
+    <div v-else>
+        hi
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-export default defineComponent({
 
-})
+
+<script setup lang="ts">
+
+import { useLocationStore } from '../stores/LocationStore';
+import { onMounted } from 'vue'
+const locationStore = useLocationStore();
+onMounted(() =>
+    navigator.geolocation.getCurrentPosition(async (position) => {
+        await locationStore.getCurrentWeather(position.coords)
+    }))
+    
 </script>
 
-<style>
-
-</style>
+<style></style>

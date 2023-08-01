@@ -1,10 +1,11 @@
-import { defineStore } from 'pinia';
-import axios from 'axios';
+import { defineStore } from 'pinia'
+import axios from 'axios'
+// import { onMounted } from 'vue';
 
 const API_KEY = process.env.VUE_APP_WEATHER_KEY;
 
 
-export const useLocationStore = defineStore('location', {
+export const useLocationStore = defineStore('LocationStore', {
   state: () => ({
     currentWeather: null,
     dailyWeather: [],
@@ -17,5 +18,6 @@ export const useLocationStore = defineStore('location', {
       );
       this.currentWeather = res.data
     },
+    
   },
 });
