@@ -8,13 +8,12 @@
 import { defineComponent } from 'vue';
 import HomePage from './pages/HomePage.vue'
 export default defineComponent({
-  name: 'App',
   components: {
     HomePage
   },
-  mounted: () => {
-    // navigator.geolocation.getCurrentPosition
-  }
+  // mounted: () => {
+  //   // navigator.geolocation.getCurrentPosition
+  // }
 });
 </script>
 
