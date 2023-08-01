@@ -32,7 +32,13 @@ export const useLocationStore = defineStore('LocationStore', {
     // API call for fetching icons
     generateIconUrl(ico: string) {
         return `http://openweathermap.org/img/wn/${ico}@2x.png`
-      }
-    
+    },
+    // Method to get forecast data from OpenWeather API
+    async getDailyWeather(coords: {longitude: number, latitude: number} ){
+        const res = await axios.get(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.latitude}&lon=${coords.longitude}&appid=${API_KEY}&units=imperial`
+          )
+        this.dailyWeather = res.data.list
+    }
   },
 });
