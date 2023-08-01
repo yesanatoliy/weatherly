@@ -10,6 +10,9 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'App',
   components: {
+  },
+  mounted: () => {
+    // navigator.geolocation.getCurrentPosition
   }
 });
 </script>
