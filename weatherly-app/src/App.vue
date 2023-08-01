@@ -1,14 +1,14 @@
 <template>
   <div class="app">
     <HomePage />
-    <p></p>
+    <p>{{ locationStore.currentWeather }}</p>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue';
 import HomePage from './pages/HomePage.vue'
-import { useLocationStore } from "@/stores/LocationStore.js"
+import { useLocationStore } from "@/stores/LocationStore"
 
 
 export default defineComponent({
@@ -26,6 +26,8 @@ export default defineComponent({
   }
 });
 </script>
+
+
 
 <style>
 
