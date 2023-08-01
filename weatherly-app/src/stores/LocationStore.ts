@@ -7,7 +7,10 @@ const API_KEY = process.env.VUE_APP_WEATHER_KEY;
 
 export const useLocationStore = defineStore('LocationStore', {
   state: () => ({
-    currentWeather: null,
+    currentWeather: null as null | {
+        name: string,
+        weather: Array<{icon:string}>
+    },
     dailyWeather: [],
   }),
   actions: {
@@ -18,6 +21,9 @@ export const useLocationStore = defineStore('LocationStore', {
       );
       this.currentWeather = res.data
     },
+    generateIconUrl(ico: string) {
+        return `http://openweathermap.org/img/wn/${ico}@2x.png`
+      }
     
   },
 });

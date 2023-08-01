@@ -1,9 +1,12 @@
 <template>
     <div v-if="locationStore.currentWeather">
         <p>{{ locationStore.currentWeather }}</p>
+        <h1>{{ locationStore.currentWeather.name }}</h1>
+        <img :src="locationStore.generateIconUrl(
+            locationStore.currentWeather.weather[0].icon)" />
     </div>
     <div v-else>
-        hi
+        Loading...
     </div>
 </template>
 
