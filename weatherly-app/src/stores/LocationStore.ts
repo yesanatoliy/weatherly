@@ -12,7 +12,7 @@ export const useLocationStore = defineStore('LocationStore', {
   }),
   actions: {
     // Method to get the current weather data from OpenWeather API
-    async getCurrentWeather(coords: any) {
+    async getCurrentWeather(coords: {longitude: number, latitude: number}) {
       const res = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${API_KEY}&units=imperial`
       );
