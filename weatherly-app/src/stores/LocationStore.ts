@@ -9,7 +9,15 @@ export const useLocationStore = defineStore('LocationStore', {
   state: () => ({
     currentWeather: null as null | {
         name: string,
-        weather: Array<{icon:string}>
+        weather: Array<{
+            icon:string,
+            description: string,
+        }>,
+        main: {
+            temp: number,
+            temp_max: number,
+            temp_min: number
+        }
     },
     dailyWeather: [],
   }),
@@ -21,6 +29,7 @@ export const useLocationStore = defineStore('LocationStore', {
       );
       this.currentWeather = res.data
     },
+    // API call for fetching icons
     generateIconUrl(ico: string) {
         return `http://openweathermap.org/img/wn/${ico}@2x.png`
       }
