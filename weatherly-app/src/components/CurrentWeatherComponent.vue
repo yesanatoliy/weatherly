@@ -1,6 +1,6 @@
 <template>
-    <v-card color="transparent" class="mx-16 mt-10 pt-16 pb-8 text-left pl-16" v-if="locationStore.currentWeather">
-        <v-card-title class="text-left text-h2 makeWhite">{{ locationStore.currentWeather.name }}</v-card-title>
+    <v-card class="transparentCard pt-16 pb-8 text-left pl-16" v-if="locationStore.currentWeather">
+        <v-card-title class="text-left text-h2">{{ locationStore.currentWeather.name }}</v-card-title>
         <!-- Down below we are binding the img src through a method 
         in the Location Store that makes an API call. 
         The function takes in an icon argument and we are
@@ -35,8 +35,11 @@ img{
     display: block;
     width: 8%
 }
-makeWhite{
+.transparentCard{
     color: white;
+    background-color: transparent;
+    box-shadow: none;
+    margin-left: 16%
 }
 
 </style>

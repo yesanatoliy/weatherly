@@ -1,6 +1,7 @@
 <template>
     <div>
         <SearchComponent />
+        
         <CurrentWeatherComponent />
         <ForecastComponent />
     </div>
@@ -12,4 +13,6 @@
     import SearchComponent from '@/components/SearchComponent.vue';
 </script>
 
-<style></style>
+<style scoped>
+
+</style>

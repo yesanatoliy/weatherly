@@ -62,7 +62,9 @@
         background-color: #01589b69;
         padding-top: 25px;
         padding-bottom: 35px;
-        margin: 5% auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
         width: 70%;
         border: 1px solid #7272721d;
         box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.19);
