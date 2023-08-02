@@ -35,7 +35,7 @@ export const useLocationStore = defineStore('LocationStore', {
     searchedForecast: [] as Array<WeatherData>,
     searched: false,
     searchBar: '',
-    city: null as null | Array<CityData>
+    city: null as null | CityData
   }),
   
   actions: {
@@ -74,6 +74,7 @@ export const useLocationStore = defineStore('LocationStore', {
           }
         }
     },
+    // This handles our API call and our submit of our search bar
     async getCityInfo(e: Event) {
       e.preventDefault()
       const res = await axios.get(
@@ -82,6 +83,16 @@ export const useLocationStore = defineStore('LocationStore', {
       this.city = res.data[0]
       this.searchBar = ''
       this.searched = true
+      // Have to include this if statement so that the code will only run if the API call successfully
+      // sets a city state.
+      if (this.city) {
+        const coords = {
+          latitude: this.city.lat,
+          longitude: this.city.lon,
+        };
+        this.getCurrentWeather(coords)
+        this.getDailyWeather(coords)
+      }
     },
     
   },
