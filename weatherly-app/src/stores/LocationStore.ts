@@ -11,10 +11,10 @@ interface WeatherData {
     temp_max: number,
     temp_min: number
   },
-  weather: [{
+  weather: Array<{
     icon: string,
     id: number
-  }]
+  }>
 }
 
 
