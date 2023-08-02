@@ -1,6 +1,6 @@
 <template>
-    <div v-if="locationStore.currentWeather">
-        <h3>{{ locationStore.currentWeather.name }}</h3>
+    <v-card class="w-25" v-if="locationStore.currentWeather">
+        <v-card-title>{{ locationStore.currentWeather.name }}</v-card-title>
         <!-- Down below we are binding the img src through a method 
         in the Location Store that makes an API call. 
         The function takes in an icon argument and we are
@@ -12,7 +12,7 @@
         />
         <p>{{ locationStore.currentWeather.main.temp }}&deg;F</p>
         <p>{{ locationStore.currentWeather.weather[0].description }}</p>
-    </div>
+    </v-card>
     <div v-else>
         Loading...
     </div>
