@@ -1,11 +1,44 @@
+# **Weatherly**
+## **Date**: 08/02/2023
+### **By**: Anatoliy Agadzhanov
+#### [GitHub](https://github.com/yesanatoliy) | [LinkedIn](https://www.linkedin.com/in/anatoliy-agadzhanov-5a2a54173/) 
+***
+### ***Description***
+Weatherly is a weather app in which users can see the current weather and a 5 day weather forecast for their location. Users can also search by city to find out the current weather and forecast for any other city in the globe.
+***
+### ***Getting Started***
+You can navigate to the website [here!](https://a-weatherly-app.netlify.app/) Or, you can clone the code, cd into the weatherly-app directory and run npm i and npm run serve to host it on your local machine.
 
-1. **Application Functionality:** The application should have the following features:  - Display current weather details for a user-provided location 
- - Display a 5-day forecast for the user-provided location 
- - The user should be able to search for a location 
-2. **3rd Party API:** Use a 3rd party weather API such as OpenWeatherMap or Weather API for  collecting the weather details. 
-3. **Vuetify:** Use the Vuetify library to style your components. Ensure that the application is  responsive and provides a good user experience on both mobile and desktop devices. 
-4. **Data Store:** Use Vuex or Pinia for state management in your application. The state should  handle storing the current location and the weather data fetched from the API. 
-5. **Code Quality:** Your code should be clean, well-organized and include meaningful  comments explaining the more complex parts of your application.  
+***
+### ***Technologies Used***
+* Vue3 composition API
+* TypeScript
+* OpenWeather API
+* Pinia
+* Node.js
+* CSS
+    * Vuetify
+* Geolocation API
 
-favicon.io
-unsplash.com
+
+***
+### ***Screenshots***
+#### **Home Page**
+![Home page](./weatherly-app/src/assets/weatherlyHome.png)
+
+***
+### ***Future Updates***
+- [ ] Add vuetify icons
+- [ ] Clean up transitions
+- [ ] Clean up header
+- [ ] Deploy
+
+***
+
+### ***Credits***
+
+Styling library: [Vuetify](https://vuetifyjs.com/en/)
+
+Images: [unsplash.com searches](https://unsplash.com)
+
+Favicon generator: [favicon.io](https://favicon.io/)
