@@ -1,9 +1,11 @@
 <template>
     <header>
         <h1>Weatherly</h1>
-        <v-form class="justify-center" @submit="locationStore.getCityInfo">
+        <v-form class="d-flex justify-end" @submit="locationStore.getCityInfo">
             <input :value="locationStore.searchBar" type="text" @change="handleChange" placeholder="Search a city..">
-            <button><v-icon icon="mdi-magnify"></v-icon></button>
+            <button>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Blue_magnifying_glass_icon.svg/834px-Blue_magnifying_glass_icon.svg.png" alt="">
+            </button>
         </v-form>
     </header>
 </template>
@@ -28,15 +30,14 @@
  input{
     background-color: white;
     color: black;
-    padding: 3px;
-    font-size: 18px;
-    width: 60%;
+    padding: 0 10px;
+    font-size: 20px;
+    width: 30%;
     border-radius: 10px;
     transition: width 0.4s ease-in-out;
-    margin-top: 2%;
  }
  input:focus{
-    width:100%
+    width:50%;
  }
  header{
     background-color: rgba(0, 0, 0, 0.399);
@@ -44,8 +45,17 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 1%;
+    align-items: center
  }
  h1{
     color: white;
  }
+ img{
+    width: 30%;
+    padding-top: 5%;
+ }
+ button{
+    width: 10%
+ }
+
 </style>
