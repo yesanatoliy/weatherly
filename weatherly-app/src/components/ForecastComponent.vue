@@ -1,20 +1,25 @@
 <template>
-    <v-card class="" v-for="(day, index) in locationStore.dailyWeather" 
-    :key="index">
-        <!-- Down below we are binding the img src through a method 
-        in the Location Store that makes an API call. 
-        The function takes in an icon argument and we are
-        retrieving that icon arg from our first API call, 
-        which populates our current weather
-        data when this component is mounted. -->
-        <v-card-title>{{ unixConverter(day.dt)[1] }}</v-card-title>
-        <v-card-item>{{ unixConverter(day.dt)[0] }}</v-card-item>
-        <img :src="locationStore.generateIconUrl(
-            day.weather[0].icon)" 
-        />
-        <v-card-text>{{ day.main.temp }}&deg;F</v-card-text>
-        <v-card-text>{{ day.weather[0].description }}</v-card-text>
-    </v-card>
+    <v-sheet class="customColor2" >
+        <h2>5-day forecast</h2>
+        <v-sheet color="transparent" class="d-inline-flex justify-space-evenly w-100 h-100 mt-10">
+            <v-card class="customColor flex-column justify-center" v-for="(day, index) in locationStore.dailyWeather" 
+            :key="index">
+                <v-card-title>{{ unixConverter(day.dt)[1] }}</v-card-title>
+                <v-card-item>{{ unixConverter(day.dt)[0] }}</v-card-item>
+                <!-- Down below we are binding the img src through a method 
+                in the Location Store that makes an API call. 
+                The function takes in an icon argument and we are
+                retrieving that icon arg from our first API call, 
+                which populates our current weather
+                data when this component is mounted. -->
+                <img :src="locationStore.generateIconUrl(
+                    day.weather[0].icon)" 
+                />
+                <v-card-text>{{ day.main.temp }}&deg;F</v-card-text>
+                <v-card-text>{{ day.weather[0].description }}</v-card-text>
+            </v-card>
+        </v-sheet>
+    </v-sheet>
 </template>
 
 <script setup lang="ts">
@@ -47,6 +52,23 @@
     
 </script>
 
-<style>
-
+<style scoped>
+    .customColor{
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        text-align: center;
+    }
+    .customColor2{
+        background-color: #01589b69;
+        padding-top: 25px;
+        padding-bottom: 35px;
+        margin: 5% auto;
+        width: 90%;
+        border: 1px solid #7272721d;
+        box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.19);
+        border-radius: 10px
+    }
+    h2{
+        color: white;
+    }
 </style>
