@@ -13,7 +13,8 @@ interface WeatherData {
   },
   weather: Array<{
     icon: string,
-    id: number
+    id: number,
+    description: string
   }>
 }
 

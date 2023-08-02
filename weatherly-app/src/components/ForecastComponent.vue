@@ -1,5 +1,5 @@
 <template>
-    <div v-for="(day, index) in locationStore.dailyWeather" 
+    <v-card class="" v-for="(day, index) in locationStore.dailyWeather" 
     :key="index">
         <!-- Down below we are binding the img src through a method 
         in the Location Store that makes an API call. 
@@ -7,11 +7,14 @@
         retrieving that icon arg from our first API call, 
         which populates our current weather
         data when this component is mounted. -->
+        <v-card-title>{{ unixConverter(day.dt)[1] }}</v-card-title>
+        <v-card-item>{{ unixConverter(day.dt)[0] }}</v-card-item>
         <img :src="locationStore.generateIconUrl(
             day.weather[0].icon)" 
         />
-        <p>{{ day.main.temp }}&deg;F</p>
-    </div>
+        <v-card-text>{{ day.main.temp }}&deg;F</v-card-text>
+        <v-card-text>{{ day.weather[0].description }}</v-card-text>
+    </v-card>
 </template>
 
 <script setup lang="ts">
@@ -24,7 +27,13 @@
         navigator.geolocation.getCurrentPosition(async (position) => {
             await locationStore.getDailyWeather(position.coords)
         }))
-
+    
+    const unixConverter = (unix: number) => {
+       let timeStamp = new Date(unix).toLocaleTimeString("en-US")
+       let dateStamp = new Date(unix * 1000).toLocaleDateString("en-US")
+       return [timeStamp, dateStamp]
+    }
+    
 </script>
 
 <style>
