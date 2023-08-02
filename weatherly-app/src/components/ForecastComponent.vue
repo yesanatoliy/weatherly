@@ -15,8 +15,8 @@
                 <img :src="locationStore.generateIconUrl(
                     day.weather[0].icon)" 
                 />
-                <v-card-text>{{ day.main.temp }}&deg;F</v-card-text>
                 <v-card-text>{{ day.weather[0].description }}</v-card-text>
+                <v-card-text>{{ day.main.temp }}&deg;F</v-card-text>
             </v-card>
         </v-sheet>
     </v-sheet>
@@ -63,7 +63,7 @@
         padding-top: 25px;
         padding-bottom: 35px;
         margin: 5% auto;
-        width: 90%;
+        width: 70%;
         border: 1px solid #7272721d;
         box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.19);
         border-radius: 10px

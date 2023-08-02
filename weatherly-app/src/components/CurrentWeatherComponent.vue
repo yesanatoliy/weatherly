@@ -1,6 +1,6 @@
 <template>
-    <v-card class="w-25" v-if="locationStore.currentWeather">
-        <v-card-title>{{ locationStore.currentWeather.name }}</v-card-title>
+    <v-card color="transparent" class="mx-16 mt-10 pt-16 pb-8 text-left pl-16" v-if="locationStore.currentWeather">
+        <v-card-title class="text-left text-h2 makeWhite">{{ locationStore.currentWeather.name }}</v-card-title>
         <!-- Down below we are binding the img src through a method 
         in the Location Store that makes an API call. 
         The function takes in an icon argument and we are
@@ -10,8 +10,9 @@
         <img :src="locationStore.generateIconUrl(
             locationStore.currentWeather.weather[0].icon)" 
         />
-        <v-card-text>{{ locationStore.currentWeather.main.temp }}&deg;F</v-card-text>
+        <v-card-title class="text-h4">{{ locationStore.currentWeather.main.temp }}&deg;F</v-card-title>
         <v-card-subtitle>{{ locationStore.currentWeather.weather[0].description }}</v-card-subtitle>
+        <v-card-text>H:{{ locationStore.currentWeather.main.temp_max }}&deg;F <v-divider color="white" thickness="10" vertical></v-divider> L:{{ locationStore.currentWeather.main.temp_min }}&deg;F</v-card-text>
     </v-card>
     <v-card class="w-50 h-auto" v-else loading 
     title="Please allow access to your location or type in the Search bar.">
@@ -28,4 +29,14 @@
         }))
 </script>
 
-<style></style>
+<style scoped>
+img{
+    margin-left: 0;
+    display: block;
+    width: 8%
+}
+makeWhite{
+    color: white;
+}
+
+</style>
