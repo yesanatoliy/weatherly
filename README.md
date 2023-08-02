@@ -7,7 +7,7 @@
 Weatherly is a weather app in which users can see the current weather and a 5 day weather forecast for their location. Users can also search by city to find out the current weather and forecast for any other city in the globe.
 ***
 ### ***Getting Started***
-You can navigate to the website [here!](https://a-weatherly-app.netlify.app/) Or, you can clone the code, cd into the weatherly-app directory and run npm i and npm run serve to host it on your local machine.
+You can navigate to the website [here!](https://a-weatherly-app.netlify.app/) Or, you can clone the code, cd into the weatherly-app directory and run npm i and npm run serve to host it on your local machine. Make sure you have a local env variable with your API key for OpenWeather in it.
 
 ***
 ### ***Technologies Used***
