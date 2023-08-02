@@ -27,7 +27,8 @@ export const useLocationStore = defineStore('LocationStore', {
     dailyWeather: [] as Array<WeatherData>,
     searchedWeather: null as null | WeatherData,
     searchedForecast: [] as Array<WeatherData>,
-    searched: false
+    searched: false,
+    searchBar: null as null | string
   }),
   
   actions: {
