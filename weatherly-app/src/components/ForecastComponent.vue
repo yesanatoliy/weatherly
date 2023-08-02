@@ -1,5 +1,5 @@
 <template>
-    <v-sheet class="customColor2" >
+    <v-sheet v-if="locationStore.dailyWeather.length > 0" class="customColor2" >
         <h2>5-day forecast</h2>
         <v-sheet color="transparent" class="d-inline-flex justify-space-evenly w-100 h-100 mt-10">
             <v-card class="customColor flex-column justify-center" v-for="(day, index) in locationStore.dailyWeather" 
