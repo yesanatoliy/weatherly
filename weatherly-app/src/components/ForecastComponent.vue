@@ -1,6 +1,6 @@
 <template>
-    <div v-for="(day) in locationStore.dailyWeather" 
-    :key="day.weather[0].id">
+    <div v-for="(day, index) in locationStore.dailyWeather" 
+    :key="index">
         
         <!-- Down below we are binding the img src through a method 
         in the Location Store that makes an API call. 
