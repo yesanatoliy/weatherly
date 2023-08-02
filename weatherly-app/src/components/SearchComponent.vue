@@ -2,8 +2,8 @@
     <header>
         <h1>Weatherly</h1>
         <v-form class="justify-center" @submit="locationStore.getCityInfo">
-            <input :value="locationStore.searchBar" type="text" @change="handleChange" placeholder="Type a city...">
-            <button>Search</button>
+            <input :value="locationStore.searchBar" type="text" @change="handleChange" placeholder="Search a city..">
+            <button><v-icon icon="mdi-magnify"></v-icon></button>
         </v-form>
     </header>
 </template>
@@ -26,8 +26,17 @@
 
 <style scoped>
  input{
-    background-color: rgba(0, 0, 0, 0.399);
-    color: white;
+    background-color: white;
+    color: black;
+    padding: 3px;
+    font-size: 18px;
+    width: 60%;
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+    margin-top: 2%;
+ }
+ input:focus{
+    width:100%
  }
  header{
     background-color: rgba(0, 0, 0, 0.399);
