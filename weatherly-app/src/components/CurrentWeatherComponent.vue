@@ -1,6 +1,5 @@
 <template>
     <div v-if="locationStore.currentWeather">
-        <p>{{ locationStore.currentWeather }}</p>
         <h3>{{ locationStore.currentWeather.name }}</h3>
         <!-- Down below we are binding the img src through a method 
         in the Location Store that makes an API call. 
