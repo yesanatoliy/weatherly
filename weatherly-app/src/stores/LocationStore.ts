@@ -34,7 +34,7 @@ export const useLocationStore = defineStore('LocationStore', {
     searchedWeather: null as null | WeatherData,
     searchedForecast: [] as Array<WeatherData>,
     searched: false,
-    searchBar: null as null | string,
+    searchBar: '',
     city: null as null | Array<CityData>
   }),
   
@@ -73,6 +73,16 @@ export const useLocationStore = defineStore('LocationStore', {
             this.dailyWeather.push(forecast[i])
           }
         }
-    }
+    },
+    async getCityInfo(e: Event) {
+      e.preventDefault()
+      const res = await axios.get(
+        `http://api.openweathermap.org/geo/1.0/direct?q=${this.searchBar}&limit=1&appid=${API_KEY}`
+      )
+      this.city = res.data[0]
+      this.searchBar = ''
+      this.searched = true
+    },
+    
   },
 });
