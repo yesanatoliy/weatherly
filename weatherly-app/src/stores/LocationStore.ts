@@ -5,6 +5,7 @@ import axios from 'axios'
 const API_KEY = process.env.VUE_APP_WEATHER_KEY;
 
 interface WeatherData {
+  name: string,
   dt: number,
   main: {
     temp: number,
@@ -22,23 +23,8 @@ interface WeatherData {
 export const useLocationStore = defineStore('LocationStore', {
   
   state: () => ({
-    
-    currentWeather: null as null | {
-        name: string,
-        weather: Array<{
-            icon:string,
-            description: string,
-        }>,
-        main: {
-            temp: number,
-            temp_max: number,
-            temp_min: number
-        }
-    },
-    
-
+    currentWeather: null as null | WeatherData,
     dailyWeather: [] as Array<WeatherData>
-
   }),
   
   actions: {
