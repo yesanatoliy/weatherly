@@ -19,6 +19,12 @@ interface WeatherData {
   }>
 }
 
+interface CityData {
+  name: string,
+  lat: number,
+  lon: number
+}
+
 
 export const useLocationStore = defineStore('LocationStore', {
   
@@ -28,7 +34,8 @@ export const useLocationStore = defineStore('LocationStore', {
     searchedWeather: null as null | WeatherData,
     searchedForecast: [] as Array<WeatherData>,
     searched: false,
-    searchBar: null as null | string
+    searchBar: null as null | string,
+    city: null as null | Array<CityData>
   }),
   
   actions: {
