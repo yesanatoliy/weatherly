@@ -1,9 +1,9 @@
 <template>
     <div>
-        <form @submit="locationStore.getCityInfo">
+        <v-form @submit="locationStore.getCityInfo">
             <input :value="locationStore.searchBar" type="text" @change="handleChange">
             <button>Search</button>
-        </form>
+        </v-form>
     </div>
 </template>
 

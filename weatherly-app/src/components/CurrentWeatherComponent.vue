@@ -10,12 +10,12 @@
         <img :src="locationStore.generateIconUrl(
             locationStore.currentWeather.weather[0].icon)" 
         />
-        <p>{{ locationStore.currentWeather.main.temp }}&deg;F</p>
-        <p>{{ locationStore.currentWeather.weather[0].description }}</p>
+        <v-card-text>{{ locationStore.currentWeather.main.temp }}&deg;F</v-card-text>
+        <v-card-subtitle>{{ locationStore.currentWeather.weather[0].description }}</v-card-subtitle>
     </v-card>
-    <div v-else>
-        Loading...
-    </div>
+    <v-card class="w-50 h-auto" v-else loading 
+    title="Please allow access to your location or type in the Search bar.">
+    </v-card>
 </template>
 
 <script setup lang="ts">

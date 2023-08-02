@@ -69,7 +69,7 @@ export const useLocationStore = defineStore('LocationStore', {
         // I put an if statement to ensure that the loop checks if the array is 
         // empty first. I also added the logical or operator so that the function
         // run if there is a new search, and I also cleared the dailyWeather array so it never
-        // exceeds 5 days which might be redundant I'm not sure.
+        // exceeds 5 elements which might be redundant I'm not sure.
         if (this.dailyWeather.length === 0 || this.searched === true) {
           this.dailyWeather = []
           for (let i = 0; i < 33; i += 8){
