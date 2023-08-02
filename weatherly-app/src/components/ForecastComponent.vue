@@ -43,11 +43,11 @@
         minute: 'numeric',
         second: 'numeric',
         hour12: true,
-        timeZone: 'UTC', // Specify the desired time zone (change it to your desired time zone)
+        timeZone: 'UTC',
         });
         const timeStamp = formatter.format(rawDate);
         let dateStamp = new Date(unix * 1000).toLocaleDateString("en-US")
-       return [timeStamp, dateStamp]
+        return [timeStamp, dateStamp]
     }
     
 </script>
@@ -70,6 +70,7 @@
         box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.19);
         border-radius: 10px
     }
+    
     h2{
         color: white;
     }

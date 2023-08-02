@@ -1,7 +1,6 @@
 <template>
     <div>
         <SearchComponent />
-        
         <CurrentWeatherComponent />
         <ForecastComponent />
     </div>
@@ -14,5 +13,4 @@
 </script>
 
 <style scoped>
-
 </style>

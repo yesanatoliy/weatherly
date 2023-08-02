@@ -97,6 +97,5 @@ export const useLocationStore = defineStore('LocationStore', {
         this.getDailyWeather(coords)
       }
     },
-    
   },
 });
