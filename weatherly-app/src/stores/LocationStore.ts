@@ -6,7 +6,9 @@ const API_KEY = process.env.VUE_APP_WEATHER_KEY;
 
 
 export const useLocationStore = defineStore('LocationStore', {
+  
   state: () => ({
+    
     currentWeather: null as null | {
         name: string,
         weather: Array<{
@@ -19,8 +21,11 @@ export const useLocationStore = defineStore('LocationStore', {
             temp_min: number
         }
     },
-    dailyWeather: [] as Array<object>,
+
+    dailyWeather: [] as Array<object>
+
   }),
+  
   actions: {
     // Method to get the current weather data from OpenWeather API
     async getCurrentWeather(coords: {longitude: number, latitude: number}) {
@@ -51,7 +56,7 @@ export const useLocationStore = defineStore('LocationStore', {
         // dailyWeather state from becoming too long and giving us repeating data
         // I put an if statement to ensure that the loop checks if the array is 
         // empty first.
-        if(this.dailyWeather.length === 0){
+        if (this.dailyWeather.length === 0) {
           for (let i = 0; i < 33; i += 8){
             this.dailyWeather.push(forecast[i])
           }
