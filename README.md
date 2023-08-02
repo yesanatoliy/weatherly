@@ -1,4 +1,3 @@
-created README
 
 1. **Application Functionality:** The application should have the following features:  - Display current weather details for a user-provided location 
  - Display a 5-day forecast for the user-provided location 
