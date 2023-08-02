@@ -29,8 +29,19 @@
         }))
     
     const unixConverter = (unix: number) => {
-       let timeStamp = new Date(unix).toLocaleTimeString("en-US")
-       let dateStamp = new Date(unix * 1000).toLocaleDateString("en-US")
+        let rawDate = new Date(unix * 1000)
+        // Had to look this object up, for some reason the .toLocaleTimeString method was not
+        // returning the right time because it relies on the user's browser's settings
+        // and apparently this way is more consistent. Still going to use the locale date string though.
+        const formatter = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true,
+        timeZone: 'UTC', // Specify the desired time zone (change it to your desired time zone)
+        });
+        const timeStamp = formatter.format(rawDate);
+        let dateStamp = new Date(unix * 1000).toLocaleDateString("en-US")
        return [timeStamp, dateStamp]
     }
     
