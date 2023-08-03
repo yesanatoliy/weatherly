@@ -81,7 +81,7 @@ export const useLocationStore = defineStore('LocationStore', {
     async getCityInfo(e: Event) {
       e.preventDefault()
       const res = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${this.searchBar}&limit=1&appid=${API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${this.searchBar}&limit=1&appid=${API_KEY}`
       )
       this.city = res.data[0]
       this.searchBar = ''
